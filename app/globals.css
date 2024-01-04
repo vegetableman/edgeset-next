@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .reverse {
+    animation-direction: reverse;
+  }
+
+  .fog {
+    mask-image: linear-gradient(to bottom, hsl(0 0% 0% / 0) 0%, hsl(0 0% 0% / 1) 5%, hsl(0 0% 0% / 1) 95%, hsl(0 0% 0% / 0));
+  }
+
+  .header-mask {
+    -webkit-mask-image: linear-gradient(to bottom, black 4.2rem, transparent);
+    mask-image: linear-gradient(to bottom, black 4.2rem, transparent);
+    backdrop-filter: blur(10px);
+  }
+
+  .scrollbar-hide {
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+:root {
+  --foreground-rgb: 51, 51, 51;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+body,
+input,
+select {
+  color: rgb(var(--foreground-rgb));
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-sans), sans-serif;
+  letter-spacing: -0.125rem;
+}
+
+.portal-fade-enter {
+  opacity: 0.01;
+}
+
+.portal-fade-enter-active {
+  opacity: 1;
+  transition: opacity 400ms ease-in-out;
+}
+
+.portal-fade-exit {
+  opacity: 1;
+}
+
+.portal-fade-exit-active {
+  opacity: 0.01;
+  transition: opacity 400ms ease-in-out;
+}
+
+html[data-request-demo=true] header g {
+  fill: white;
+}
+
+html[data-request-demo=true] header button[data-label="request-demo"] {
+  visibility: hidden;
+}
+
+html[data-request-demo=true] body,
+html[data-show-menu=true] body {
+  overflow: hidden;
+}
+
+html[data-request-demo=true] header button[data-label="burger"] {
+  color: white;
+}
+
+.card-appear {
+  opacity: 0;
+}
+
+.card-appear-active {
+  opacity: 1;
+  transition: opacity 200ms;
+}
+
+.card-enter {
+  opacity: 0;
+}
+
+.card-enter-active {
+  opacity: 1;
+  transition: opacity 200ms;
+}
+
+.snapshot-appear {
+  opacity: 0;
+}
+
+.snapshot-appear-active {
+  opacity: 1;
+  transition: opacity 400ms;
+}
+
+.snapshot-enter {
+  opacity: 0;
+}
+
+.snapshot-enter-active {
+  opacity: 1;
+  transition: opacity 400ms;
+}
